@@ -81,8 +81,90 @@ async function init2(keyword) {
     })
 }
 
-searchButton.addEventListener('click', () => {
-    console.log("Search button pressed");
+async function fetchCategories() {
+    try {
+        const response = await fetch(`
+            https://dummyjson.com/products/category-list
+        `);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("Error: ", error);
+    } 
+}
+
+const categoryDropdown = document.querySelector('.category-select');
+
+async function categoriesInit() {
+    const categories = await fetchCategories();
+
+    categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categoryDropdown.appendChild(option);
+    })
+}
+
+categoriesInit();
+
+async function fetchProductsByCategory(category) {
+    try {
+        const response = await fetch(
+            `https://dummyjson.com/products/category/${category}`
+        )
+        const data = await response.json();
+        console.log(data.products);
+        return data.products;
+    } catch (error) {
+        console.log("Error: ", error);
+    }
+}
+
+async function filterByCategoryInit(category) {
+    const products = await fetchProductsByCategory(category);
+    console.log("Products:", products);
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+        const productTitle = document.createElement('h1');
+        productTitle.textContent = product.title;
+
+        const productImage = document.createElement('img');
+        productImage.src = product.thumbnail;
+
+        const productPrice = document.createElement('h2');
+        productPrice.textContent = `$${product.price}`;
+
+        productDiv.appendChild(productImage);
+        productDiv.appendChild(productTitle);
+        productDiv.appendChild(productPrice);
+
+        featuredProductsDiv.appendChild(productDiv);
+    })
+}
+
+// filterByCategoryInit('smartphones');
+
+searchButton.addEventListener('click', async () => {
     featuredProductsDiv.innerHTML = '';
-    init2(searchBox.value);
+
+    const keyword = searchBox.value.trim();
+    const category = categoryDropdown.value;
+
+    if (keyword) {
+        await init2(keyword);
+    } else if (category) {
+        await filterByCategoryInit(category);
+    } else {
+        await init(); // show default products again
+    }
+});
+
+const fakebayLogo = document.querySelector('.fakebay-logo');
+
+fakebayLogo.addEventListener("click", () => {
+    featuredProductsDiv.innerHTML = '';
+    init();
 })

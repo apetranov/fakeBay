@@ -18,6 +18,10 @@ body {
     gap: 10px;
 }
 
+.fakebay-logo {
+    cursor: pointer;
+}
+
 input {
     width: 80%;
     padding: 10px 20px;
