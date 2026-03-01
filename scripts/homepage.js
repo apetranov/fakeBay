@@ -114,7 +114,6 @@ async function fetchProductsByCategory(category) {
             `https://dummyjson.com/products/category/${category}`
         )
         const data = await response.json();
-        console.log(data.products);
         return data.products;
     } catch (error) {
         console.log("Error: ", error);
@@ -123,7 +122,6 @@ async function fetchProductsByCategory(category) {
 
 async function filterByCategoryInit(category) {
     const products = await fetchProductsByCategory(category);
-    console.log("Products:", products);
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
