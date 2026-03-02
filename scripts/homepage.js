@@ -1,3 +1,5 @@
+import { addToCart } from './cart.js';
+
 async function fetchProducts() {
     try {
         const response = await fetch(
@@ -34,6 +36,12 @@ async function init() {
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Add to Cart';
         addToCartBtn.classList.add('add-to-cart-button');
+
+        addToCartBtn.addEventListener('click', () => {
+            addToCart(product);
+            alert("Added to cart!");
+        });
+
 
         productDiv.appendChild(productImage);
         productDiv.appendChild(productTitle);
@@ -81,6 +89,11 @@ async function init2(keyword) {
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Add to Cart';
         addToCartBtn.classList.add('add-to-cart-button');
+
+        addToCartBtn.addEventListener('click', () => {
+            addToCart(product);
+            alert("Added to cart!");
+        });
 
         productDiv.appendChild(productImage);
         productDiv.appendChild(productTitle);
@@ -148,6 +161,11 @@ async function filterByCategoryInit(category) {
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Add to Cart';
         addToCartBtn.classList.add('add-to-cart-button');
+
+        addToCartBtn.addEventListener('click', () => {
+            addToCart(product);
+            alert("Added to cart!");
+        });
 
         productDiv.appendChild(productImage);
         productDiv.appendChild(productTitle);
