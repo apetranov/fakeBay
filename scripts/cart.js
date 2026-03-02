@@ -45,7 +45,7 @@ export function getCartItemsTotalPrice() {
     let totalPrice = 0;
 
     getCart().forEach(product => {
-        totalPrice += product.price;
+        totalPrice += product.price * product.quantity;
     })
 
     return `$${totalPrice.toFixed(2)}`;
