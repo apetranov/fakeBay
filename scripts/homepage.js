@@ -31,9 +31,14 @@ async function init() {
         const productPrice = document.createElement('h2');
         productPrice.textContent = `$${product.price}`;
 
+        const addToCartBtn = document.createElement('button');
+        addToCartBtn.textContent = 'Add to Cart';
+        addToCartBtn.classList.add('add-to-cart-button');
+
         productDiv.appendChild(productImage);
         productDiv.appendChild(productTitle);
         productDiv.appendChild(productPrice);
+        productDiv.appendChild(addToCartBtn);
 
         featuredProductsDiv.appendChild(productDiv);
     })
@@ -73,9 +78,14 @@ async function init2(keyword) {
         const productPrice = document.createElement('h2');
         productPrice.textContent = `$${product.price}`;
 
+        const addToCartBtn = document.createElement('button');
+        addToCartBtn.textContent = 'Add to Cart';
+        addToCartBtn.classList.add('add-to-cart-button');
+
         productDiv.appendChild(productImage);
         productDiv.appendChild(productTitle);
         productDiv.appendChild(productPrice);
+        productDiv.appendChild(addToCartBtn);
 
         featuredProductsDiv.appendChild(productDiv);
     })
@@ -135,9 +145,14 @@ async function filterByCategoryInit(category) {
         const productPrice = document.createElement('h2');
         productPrice.textContent = `$${product.price}`;
 
+        const addToCartBtn = document.createElement('button');
+        addToCartBtn.textContent = 'Add to Cart';
+        addToCartBtn.classList.add('add-to-cart-button');
+
         productDiv.appendChild(productImage);
         productDiv.appendChild(productTitle);
         productDiv.appendChild(productPrice);
+        productDiv.appendChild(addToCartBtn);
 
         featuredProductsDiv.appendChild(productDiv);
     })
