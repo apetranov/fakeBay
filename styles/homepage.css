@@ -66,6 +66,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     padding: 10px;
     transition: margin-bottom 0.2s,
     box-shadow 0.2s;
@@ -91,6 +92,14 @@ input {
     top: 0;
     width: 50px;
     height: 50px;
+}
+
+.add-to-cart-button {
+    background-color: rgb(166, 234, 117);
+    border: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 @media (max-width: 710px) {

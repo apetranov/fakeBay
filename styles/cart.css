@@ -2,9 +2,53 @@
     font-family: Montserrat, Arial;
 }
 
+body {
+    padding: 20px;
+}
+
 .cart-items {
     padding: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    background-color: rgb(231, 57, 57);
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.checkout-button {
+    background-color: rgb(198, 153, 39);
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-from-cart-button {
+    background-color: rgb(166, 234, 117);
+    border: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 420px) {
+    * {
+        text-align: center;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    img {
+        max-width: 300px;
+    }
 }
