@@ -11,7 +11,7 @@ An ecommerce store built with JavaScript and DummyJSON API
 - Filtered search by category
 - Shopping cart (saved in localStorage)
 - Adding product to cart
-- Removing product to cart
+- Removing product from cart
 - Adding multiple of the same product to cart
 
 # 🤔 How to use?
