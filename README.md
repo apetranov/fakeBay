@@ -15,8 +15,8 @@ An ecommerce store built with JavaScript and DummyJSON API
 - Adding multiple of the same product to cart
 
 # 🤔 How to use?
-To search by a product type a product (for example: phone, laptop, ball, etc.) and click the Search button
-To search by category choose a category from the dropdown and click Search
+- To search by a product type a product (for example: phone, laptop, ball, etc.) and click the Search button
+- To search by category choose a category from the dropdown and click Search
 
 # 🔴 Live link
 https://fake-bay-gold.vercel.app
