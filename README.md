@@ -20,3 +20,6 @@ An ecommerce store built with JavaScript and DummyJSON API
 
 # 🔴 Live link
 https://fake-bay-gold.vercel.app
+
+# 🎞️ Video demo
+https://github.com/user-attachments/assets/8a3e68a9-5f85-4116-860e-3866608cff6c
